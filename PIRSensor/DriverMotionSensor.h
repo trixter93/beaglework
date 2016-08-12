@@ -18,12 +18,12 @@ using namespace BlackLib;
 class DriverMotionSensor{
 public:
 	DriverMotionSensor();
-	bool setPin(gpioName pin1);
+	DriverMotionSensor(gpioName pin);
 	int getStatus();
 	//give status of the driver, 0=absent, 1=presence, 3=not sure.
 
 private:
-	volatile gpioName pin=GPIO_11;
+	BlackGPIO *PIRpin;
 };
 
 
