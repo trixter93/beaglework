@@ -7,24 +7,25 @@
 #include <DriverMotionSensor.h>
 
 DriverMotionSensor::DriverMotionSensor(){
+	PIRpin = new BlackGPIO(GPIO_65,input);
 }
 
-bool DriverMotionSensor::setPin(gpioName pin1){
-	pin = pin1;
-	return true;
+DriverMotionSensor::DriverMotionSensor(gpioName pin){
+	PIRpin = new BlackGPIO(pin,input);
 }
+
 
 int DriverMotionSensor::getStatus(){
-	BlackGPIO PIRpin(pin,input);
-	int pin = PIRpin.getNumericValue();
-	int pin2 = PIRpin.getNumericValue();
+
+	int pin = PIRpin->getNumericValue();
+	int pin2 = PIRpin->getNumericValue();
 	if (pin==1&&pin2==1){
-		return 1;
+		return 0;
 	}else{
 		if (pin==0&&pin2==0){
-			return 0;
+			return 1;
 		}else{
-			return 3;
+			return 2;
 		}
 	}
 }
