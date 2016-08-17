@@ -2,7 +2,7 @@
  * LocomotiveController.h
  *
  *  Created on: Aug 15, 2016
- *      Author: pc2
+ *      Author: bella559
  */
 
 #ifndef LOCOMOTIVECONTROLLER_H_
