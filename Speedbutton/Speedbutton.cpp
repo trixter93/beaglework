@@ -46,18 +46,42 @@ int Speedbutton::getStatus(){
 		    return 0;
 	}
 
-
 int Speedbutton::Stop(){
-	float percent = Speedbutton::getStatus();
+	float percent = 100;
+	pwmLed->setDutyPercent(percent);
+	pwmLed->setPeriodTime(500000);
 
-		if (percent == 100){
-			cout << "STOP" << endl;
-			}
-		else{
-
-			}
-		return 0;
+	return 0;
 }
+
+int Speedbutton::Fast(){
+	float percent = 10;
+	pwmLed->setDutyPercent(percent);
+	pwmLed->setPeriodTime(500000);
+
+	return 0;
+}
+
+int Speedbutton::Constant() {
+	float percent = 40;
+	pwmLed->setDutyPercent(percent);
+	pwmLed->setPeriodTime(500000);
+
+	return 0;
+}
+
+int Speedbutton::Slow(){
+	float percent = 60;
+	pwmLed->setDutyPercent(percent);
+	pwmLed->setPeriodTime(500000);
+
+	return 0;
+}
+
+
+
+
+
 
 
 
