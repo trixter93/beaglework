@@ -1,3 +1,4 @@
+
 /*
  * Speedbutton.cpp
  *
@@ -23,7 +24,8 @@ int Speedbutton::getStatus(){
 	int click=1;
 
 	while(1);
-		    int speedbutton=speedbutton1->getNumericValue();
+
+		int speedbutton=speedbutton1->getNumericValue();
 
 		    if(speedbutton==high){
 		    	sleep(3);
@@ -41,22 +43,26 @@ int Speedbutton::getStatus(){
 	    		case 3: pwmLed->setDutyPercent(60);
 	    		break;
 		    }
+		    return 0;
 	}
 
 
 int Speedbutton::Stop(){
 	float percent = Speedbutton::getStatus();
 
-		if (percent == 90){
+		if (percent == 100){
 			cout << "STOP" << endl;
 			}
 		else{
 
-			return 0;
-
 			}
-
+		return 0;
 }
+
+
+
+
+
 
 
 
